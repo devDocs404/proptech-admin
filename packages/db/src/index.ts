@@ -1,14 +1,46 @@
-import { neon, neonConfig } from "@neondatabase/serverless";
+import { neonConfig, Pool } from "@neondatabase/serverless";
 import { env } from "@proptech-admin/env/server";
-import { drizzle } from "drizzle-orm/neon-http";
+import { drizzle } from "drizzle-orm/neon-serverless";
 import ws from "ws";
 
-import * as schema from "./schema";
+import {
+  account,
+  accountRelations,
+  session,
+  sessionRelations,
+  todo,
+  user,
+  userRelations,
+  verification,
+} from "./schema";
+
+const schema = {
+  account,
+  accountRelations,
+  session,
+  sessionRelations,
+  todo,
+  user,
+  userRelations,
+  verification,
+};
 
 neonConfig.webSocketConstructor = ws;
 
-// To work in edge environments (Cloudflare Workers, Vercel Edge, etc.), enable querying over fetch
-// neonConfig.poolQueryViaFetch = true
+// Singleton function to prevent multiple connections during development
+const globalForDb = globalThis as unknown as {
+  conn: Pool | undefined;
+};
 
-const sql = neon(env.DATABASE_URL);
-export const db = drizzle(sql, { schema });
+const conn =
+  globalForDb.conn ??
+  new Pool({
+    connectionString: env.DATABASE_URL,
+    max: 1, // Single persistent connection is enough for serverless/neon
+  });
+
+if (process.env.NODE_ENV !== "production") {
+  globalForDb.conn = conn;
+}
+
+export const db = drizzle(conn, { schema });
