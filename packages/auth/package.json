@@ -1,0 +1,24 @@
+{
+  "name": "@proptech-admin/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@proptech-admin/db": "workspace:*",
+    "@proptech-admin/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@proptech-admin/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
