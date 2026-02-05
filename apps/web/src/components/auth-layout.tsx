@@ -55,7 +55,7 @@ export default function AuthLayout({
               properties. The insights and automation are unmatched.&rdquo;
             </p>
             <footer className="text-sm text-zinc-300">
-              Thameem M, Portfolio Manager
+              Thameem M, Property Manager
             </footer>
           </blockquote>
         </div>
