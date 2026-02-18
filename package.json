@@ -8,16 +8,17 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm -r dev",
+
+    "dev:web": "pnpm --filter web dev",
+    "dev:internal": "pnpm --filter internal-web dev",
+
     "build": "pnpm -r build",
     "check-types": "pnpm -r check-types",
-    "dev:native": "pnpm --filter native dev",
-    "dev:web": "pnpm --filter web dev",
+
     "db:push": "pnpm --filter @proptech-admin/db db:push",
     "db:studio": "pnpm --filter @proptech-admin/db db:studio",
     "db:generate": "pnpm --filter @proptech-admin/db db:generate",
-    "db:migrate": "pnpm --filter @proptech-admin/db db:migrate",
-    "check": "ultracite check",
-    "fix": "ultracite fix"
+    "db:migrate": "pnpm --filter @proptech-admin/db db:migrate"
   },
   "dependencies": {
     "@proptech-admin/env": "workspace:*",
