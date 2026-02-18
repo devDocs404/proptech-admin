@@ -13,6 +13,7 @@
   "dependencies": {
     "@proptech-admin/auth": "workspace:*",
     "@proptech-admin/db": "workspace:*",
+    "@proptech-admin/emails": "workspace:*",
     "@proptech-admin/env": "workspace:*",
     "@trpc/client": "catalog:",
     "@trpc/server": "catalog:",
@@ -20,6 +21,7 @@
     "dotenv": "catalog:",
     "drizzle-orm": "catalog:",
     "next": "catalog:",
+    "resend": "^6.9.1",
     "zod": "catalog:"
   },
   "devDependencies": {
