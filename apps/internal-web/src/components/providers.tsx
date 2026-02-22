@@ -15,6 +15,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       defaultTheme="system"
       disableTransitionOnChange
       enableSystem
+      themes={["light", "dark", "midnight", "softPop", "nature", "system"]}
     >
       <QueryClientProvider client={queryClient}>
         {children}
