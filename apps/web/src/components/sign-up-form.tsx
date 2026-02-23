@@ -27,6 +27,7 @@ export default function SignUpForm() {
           email: value.email,
           password: value.password,
           name: value.name,
+          role: "client_staff",
         },
         {
           onSuccess: () => {
