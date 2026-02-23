@@ -68,7 +68,13 @@ export function NavMain({
                         <SidebarMenuSubButton
                           isActive={pathname === subItem.url}
                           render={
-                            <Link href={subItem.url as any}>
+                            <Link
+                              href={
+                                subItem.url as React.ComponentProps<
+                                  typeof Link
+                                >["href"]
+                              }
+                            >
                               <span>{subItem.title}</span>
                             </Link>
                           }

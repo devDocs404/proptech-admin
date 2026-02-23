@@ -1,9 +1,9 @@
-/** biome-ignore-all lint/suspicious/noDocumentCookie: <explanation> */
+/** biome-ignore-all lint/suspicious/noDocumentCookie: Cookie access used for sidebar state persistence */
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
 import { PanelLeftIcon } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: <explanation>
+// biome-ignore lint/performance/noNamespaceImport: React namespace import required by shadcn components
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

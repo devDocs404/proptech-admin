@@ -36,7 +36,7 @@ export function NavProjects({
                 render={
                   <Link
                     className="group/item relative overflow-hidden"
-                    href={item.url as any}
+                    href={item.url as React.ComponentProps<typeof Link>["href"]}
                   >
                     <motion.div
                       animate={{

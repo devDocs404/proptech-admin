@@ -30,6 +30,9 @@ export default function SignInForm() {
         },
         {
           onSuccess: () => {
+            const channel = new BroadcastChannel("auth_channel");
+            channel.postMessage("login");
+            channel.close();
             router.push("/dashboard");
             toast.success("Welcome back!");
           },

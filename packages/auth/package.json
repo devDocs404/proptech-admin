@@ -15,7 +15,8 @@
     "@proptech-admin/env": "workspace:*",
     "better-auth": "catalog:",
     "dotenv": "catalog:",
-    "zod": "catalog:"
+    "zod": "catalog:",
+    "drizzle-orm": "catalog:"
   },
   "devDependencies": {
     "@proptech-admin/config": "workspace:*",
