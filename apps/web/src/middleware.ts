@@ -27,9 +27,9 @@ export function middleware(request: NextRequest) {
   }
 
   // Optional: Redirect to dashboard if accessing login while authenticated
-  if ((pathname === "/login" || pathname === "/signup") && hasSession) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
+  // Removed naive cookie check here to prevent infinite redirect loop
+  // if the session cookie is present but invalid. Validation should happen
+  // on the page or via proper session API fetch.
 
   return NextResponse.next();
 }
