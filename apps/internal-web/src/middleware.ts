@@ -17,6 +17,7 @@ export function middleware(request: NextRequest) {
   // and letting the actual page/API handle strict verification.
   const hasSession =
     request.cookies.has("better-auth.session_token") ||
+    request.cookies.has("__Secure-better-auth.session_token") ||
     request.cookies.has("session_token");
 
   // Redirect to login if accessing protected route without session
@@ -27,9 +28,9 @@ export function middleware(request: NextRequest) {
   }
 
   // Optional: Redirect to dashboard if accessing login while authenticated
-  // Removed naive cookie check here to prevent infinite redirect loop
-  // if the session cookie is present but invalid. Validation should happen
-  // on the page or via proper session API fetch.
+  if ((pathname === "/login" || pathname === "/signup") && hasSession) {
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
 
   return NextResponse.next();
 }

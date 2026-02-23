@@ -17,6 +17,7 @@ export function middleware(request: NextRequest) {
   // and letting the actual page/API handle strict verification.
   const hasSession =
     request.cookies.has("better-auth.session_token") ||
+    request.cookies.has("__Secure-better-auth.session_token") ||
     request.cookies.has("session_token");
 
   // Redirect to login if accessing protected route without session
