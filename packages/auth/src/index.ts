@@ -8,25 +8,23 @@ import { nextCookies } from "better-auth/next-js";
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
-    schema: {
-      user,
-      account,
-      session,
-    },
+    schema: { user, account, session },
   }),
+
   trustedOrigins: [env.CORS_ORIGIN],
+
   emailAndPassword: {
     enabled: true,
   },
+
   user: {
     additionalFields: {
       role: {
         type: "string",
         required: true,
-        defaultValue: "client_staff",
-        input: true,
       },
     },
   },
+
   plugins: [nextCookies()],
 });
