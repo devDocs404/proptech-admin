@@ -8,11 +8,11 @@ import {
   accountRelations,
   session,
   sessionRelations,
-  todo,
   user,
   userRelations,
   verification,
-} from "./schema";
+} from "./schema/auth";
+import { todo } from "./schema/todo";
 
 const schema = {
   account,

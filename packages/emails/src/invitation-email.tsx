@@ -1,12 +1,12 @@
 import {
-  Html,
   Body,
+  Button,
   Container,
+  Heading,
+  Hr,
+  Html,
   Section,
   Text,
-  Heading,
-  Button,
-  Hr,
 } from "@react-email/components";
 
 interface InvitationEmailProps {
@@ -27,7 +27,8 @@ export default function InvitationEmail({
           </Heading>
 
           <Text style={text}>
-            You have been invited to join <strong>Proptech Property Management</strong>.
+            You have been invited to join{" "}
+            <strong>Proptech Property Management</strong>.
           </Text>
 
           <Text style={text}>
@@ -35,9 +36,12 @@ export default function InvitationEmail({
           </Text>
 
           <Section style={credentialsBox}>
-            <Text style={credential}><strong>Email:</strong> {userEmail || "shake@example.com"}</Text>
             <Text style={credential}>
-              <strong>Temporary Password:</strong> {tempPassword || "Wdh5YTdjR743"}
+              <strong>Email:</strong> {userEmail || "shake@example.com"}
+            </Text>
+            <Text style={credential}>
+              <strong>Temporary Password:</strong>{" "}
+              {tempPassword || "Wdh5YTdjR743"}
             </Text>
           </Section>
 
@@ -57,12 +61,11 @@ export default function InvitationEmail({
           <Hr style={hr} />
 
           <Text style={footer}>
-            If you did not expect this invitation, you can safely ignore this email.
+            If you did not expect this invitation, you can safely ignore this
+            email.
           </Text>
 
-          <Text style={footer}>
-            — Proptech Property Management Team
-          </Text>
+          <Text style={footer}>— Proptech Property Management Team</Text>
         </Container>
       </Body>
     </Html>

@@ -1,7 +1,7 @@
 import { createContext } from "@proptech-admin/api/context";
 import { appRouter } from "@proptech-admin/api/routers/index";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
-import { NextRequest } from "next/server";
+import type { NextRequest } from "next/server";
 
 function handler(req: NextRequest) {
   return fetchRequestHandler({
