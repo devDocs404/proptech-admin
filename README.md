@@ -5,9 +5,9 @@ A modern Turborepo monorepo powering the Proptech Admin applications.
 ## Rules & Standards
 - **pnpm**: Use `pnpm` exclusively (`pnpm install`, `pnpm dev`, `pnpm db:push`). No `npm` or `yarn`. 
 - **Type Safety**: Fully typed. Use Zod for validation.
-- **Frontend**: React 19, TanStack Start, TanStack Router.
+- **Frontend**: React 19, TNext Js 16.
 - **Styling**: Tailwind CSS v4, shadcn/ui.
-- **Backend/DB**: oRPC, Hono, PostgreSQL, Drizzle ORM.
+- **Backend/DB**: trpc, PostgreSQL, Drizzle ORM.
 - **Auth**: Better-Auth.
 
 ## Pre-commit Tools
