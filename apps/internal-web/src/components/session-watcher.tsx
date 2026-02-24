@@ -30,7 +30,6 @@ export function SessionWatcher() {
           window.location.href = "/dashboard";
         }
       } catch (err) {
-        // Ignore network errors or fetch blockages by browser extensions
         console.error("Session polling failed:", err);
       }
     }, 10_000);

@@ -4,6 +4,7 @@ import { env } from "@proptech-admin/env/server";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { nextCookies } from "better-auth/next-js";
+import { admin } from "better-auth/plugins";
 import { and, eq, ne } from "drizzle-orm";
 
 export const auth = betterAuth({
@@ -13,6 +14,11 @@ export const auth = betterAuth({
   }),
 
   trustedOrigins: [env.CORS_ORIGIN],
+
+  session: {
+    expiresIn: 60 * 60 * 24 * 7,
+    updateAge: 60 * 60 * 24,
+  },
 
   emailAndPassword: {
     enabled: true,
@@ -44,5 +50,5 @@ export const auth = betterAuth({
     },
   },
 
-  plugins: [nextCookies()],
+  plugins: [nextCookies(), admin()],
 });
