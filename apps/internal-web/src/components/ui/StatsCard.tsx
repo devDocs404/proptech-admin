@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface StatsCardProps {
   title: string;
@@ -9,11 +9,11 @@ interface StatsCardProps {
 
 const StatsCard = ({ title, value, icon: Icon }: StatsCardProps) => {
   return (
-    <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5">
+    <div className="group rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
       <div className="flex items-center justify-between">
         <div className="space-y-1">
-          <p className="text-sm font-medium text-muted-foreground">{title}</p>
-          <p className="text-3xl font-bold tracking-tight text-card-foreground">
+          <p className="font-medium text-muted-foreground text-sm">{title}</p>
+          <p className="font-bold text-3xl text-card-foreground tracking-tight">
             {value.toLocaleString()}
           </p>
         </div>

@@ -27,6 +27,7 @@ export function ModeToggle() {
         <DropdownMenuItem onClick={() => setTheme("midnight")}>Midnight</DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("softPop")}>Soft Pop</DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("nature")}>Nature</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("bubbleGum")}>Bubble Gum</DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
