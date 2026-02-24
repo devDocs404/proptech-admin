@@ -14,12 +14,13 @@ Biome (the underlying engine) provides robust linting and formatting. Most issue
 
 ## Core Principles
 
-Write code that is **accessible, performant, type-safe, and maintainable**. Focus on clarity and explicit intent over brevity.
+Write code that is **accessible, performant, type-safe, and maintainable**. Focus on clarity and explicit intent over brevity. Always use pnpm for installation of dependencies etc do not use npm, bun or yarn.
 
 ### Type Safety & Explicitness
 
 - Use explicit types for function parameters and return values when they enhance clarity
-- Prefer `unknown` over `any` when the type is genuinely unknown
+- Always use type annotations for variables and properties if there is no other option then use `unknown`
+- Prefer use `unknown` over `any` when the type is genuinely unknown
 - Use const assertions (`as const`) for immutable values and literal types
 - Leverage TypeScript's type narrowing instead of type assertions
 - Use meaningful variable names instead of magic numbers - extract constants with descriptive names
@@ -48,6 +49,8 @@ Write code that is **accessible, performant, type-safe, and maintainable**. Focu
 - Use the `key` prop for elements in iterables (prefer unique IDs over array indices)
 - Nest children between opening and closing tags instead of passing as props
 - Don't define components inside other components
+- Make sure you use `use client` for client-side code only try to avoid it where ever is not required. 
+- Always make a priority for accessibility
 - Use semantic HTML and ARIA attributes for accessibility:
   - Provide meaningful alt text for images
   - Use proper heading hierarchy
