@@ -1,6 +1,6 @@
 {
-  "id": "ee2d14de-28dd-4542-af9a-31d406dbbf48",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "dd8a0e5d-6770-4f3d-a495-6e757c38414d",
+  "prevId": "ee2d14de-28dd-4542-af9a-31d406dbbf48",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -271,6 +271,24 @@
           "primaryKey": false,
           "notNull": true,
           "default": "'client_staff'"
+        },
+        "banned": {
+          "name": "banned",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ban_reason": {
+          "name": "ban_reason",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "ban_expires": {
+          "name": "ban_expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
         }
       },
       "indexes": {},

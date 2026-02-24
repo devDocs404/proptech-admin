@@ -1,6 +1,7 @@
 import { protectedProcedure, publicProcedure, router } from "../index";
 import { inviteRouter } from "./invite";
 import { todoRouter } from "./todo";
+import { usersRouter } from "./users";
 
 export const appRouter = router({
   healthCheck: publicProcedure.query(() => {
@@ -14,5 +15,6 @@ export const appRouter = router({
   }),
   todo: todoRouter,
   invite: inviteRouter,
+  users: usersRouter,
 });
 export type AppRouter = typeof appRouter;

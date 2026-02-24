@@ -1,6 +1,6 @@
-import { Resend } from "resend";
-import { InvitationEmail } from "@proptech-admin/emails";
+import InvitationEmail from "@proptech-admin/emails/invitation-email";
 import { env } from "@proptech-admin/env/server";
+import { Resend } from "resend";
 
 const resend = new Resend(env.RESEND_API_KEY);
 
@@ -12,7 +12,7 @@ export async function sendInviteEmail(
   userEmail: string,
   tempPassword: string
 ) {
-console.log("Sending invite email to:", to);
+  console.log("Sending invite email to:", to);
   try {
     const res = await resend.emails.send({
       from: FROM_EMAIL,

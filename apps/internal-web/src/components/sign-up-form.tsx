@@ -27,7 +27,7 @@ export default function SignUpForm() {
           email: "sk.muzakkirhussain@gmail.com",
           password: "dummy@123",
           name: value.name,
-          role: "super_client",
+          role: "organisation",
         },
         {
           onSuccess: () => {

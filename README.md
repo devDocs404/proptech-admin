@@ -1,65 +1,41 @@
-# proptech-admin
+# Proptech Admin
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Self, TRPC, and more.
+A modern Turborepo monorepo powering the Proptech Admin applications.
 
-## Features
+## Rules & Standards
+- **pnpm**: Use `pnpm` exclusively (`pnpm install`, `pnpm dev`, `pnpm db:push`). No `npm` or `yarn`. 
+- **Type Safety**: Fully typed. Use Zod for validation.
+- **Frontend**: React 19, TNext Js 16.
+- **Styling**: Tailwind CSS v4, shadcn/ui.
+- **Backend/DB**: trpc, PostgreSQL, Drizzle ORM.
+- **Auth**: Better-Auth.
 
-- **TypeScript** - For type safety and improved developer experience
-- **Next.js** - Full-stack React framework
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
-- **tRPC** - End-to-end type-safe APIs
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **PWA** - Progressive Web App support
+## Pre-commit Tools
+- **Code Formatting**: `pnpm dlx ultracite fix` runs automatically.
+- **Type Checking**: TypeScript limits restrict broken commits (`check-types`).
+- **Commitlint**: Use conventional commits (e.g., `feat: build dashboard`, `fix: header padding`).
 
 ## Getting Started
 
-First, install the dependencies:
-
+1. Install dependencies
 ```bash
 pnpm install
 ```
 
-## Database Setup
-
-This project uses PostgreSQL with Drizzle ORM.
-
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/web/.env` file with your PostgreSQL connection details.
-
-3. Apply the schema to your database:
-
+2. Setup Database
 ```bash
-pnpm run db:push
+# Update .env accordingly, then
+pnpm db:push
 ```
 
-Then, run the development server:
-
+3. Run Development Server
 ```bash
-pnpm run dev
+pnpm dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) in your browser to see the fullstack application.
-
-## Project Structure
-
-```
-proptech-admin/
-├── apps/
-│   └── web/         # Fullstack application (Next.js)
-├── packages/
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
-```
-
-## Available Scripts
-
-- `pnpm run dev`: Start all applications in development mode
-- `pnpm run build`: Build all applications
-- `pnpm run check-types`: Check TypeScript types across all apps
-- `pnpm run db:push`: Push schema changes to database
-- `pnpm run db:studio`: Open database studio UI
-- `cd apps/web && pnpm run generate-pwa-assets`: Generate PWA assets
+## Useful Commands
+- `pnpm dev`: Start all dev servers.
+- `pnpm db:studio`: Open Drizzle Studio.
+- `pnpm db:push`: Push local schema changes to database.
+- `pnpm check-types`: Check TypeScript across workspaces.
+- `pnpm run knip`: Find dead/unused code.
