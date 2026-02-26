@@ -8,7 +8,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2 font-bold text-xl">
-            <span className="text-primary">PropTech</span>
+            <span className="text-primary">Steerio</span>
           </div>
           <div className="flex items-center gap-4">
             <Link href="/login">
@@ -67,7 +67,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex items-center gap-2 font-bold text-lg">
-              <span className="text-primary">PropTech</span>
+              <span className="text-primary">Steerio</span>
             </div>
             <div className="flex gap-8 text-muted-foreground text-sm">
               <Link className="hover:text-foreground" href="#">
@@ -81,7 +81,7 @@ export default function LandingPage() {
               </Link>
             </div>
             <div className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} PropTech. All rights reserved.
+              © {new Date().getFullYear()} Steerio. All rights reserved.
             </div>
           </div>
         </div>

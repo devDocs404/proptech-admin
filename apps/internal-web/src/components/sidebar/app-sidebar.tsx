@@ -81,7 +81,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   </div>
                   <div className="grid flex-2 text-left text-sm leading-tight">
                     <span className="truncate font-medium">
-                      PropTech - Internal
+                      Steerio - Internal
                     </span>
                   </div>
                 </Link>
