@@ -1,3 +1,12 @@
+import { MoreHorizontalIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -7,19 +16,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import {
-  MoreHorizontalIcon,
-} from "lucide-react";
 
- function TableDemo({invoices}) {
+function TableDemo({ invoices }) {
   return (
     <Table className="min-w-[600px]">
       <TableHeader>
@@ -70,4 +68,4 @@ import {
   );
 }
 
-export default TableDemo
+export default TableDemo;

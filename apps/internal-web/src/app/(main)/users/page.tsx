@@ -5,11 +5,9 @@ import {
   Users as UsersIcon,
   UserX,
 } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-
-import StatsCard from "@/components/ui/StatsCard";
 import TableDemo from "@/components/custom-table";
+import { Button } from "@/components/ui/button";
+import StatsCard from "@/components/ui/stats-card";
 
 const stats = {
   companies: 12,
@@ -66,11 +64,11 @@ const invoices = [
 export default function Users() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="h-full w-full flex flex-col">
+      <div className="flex h-full w-full flex-col">
         {/* Header */}
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
-            <h1 className="text-3xl font-semibold tracking-tight">
+            <h1 className="font-semibold text-3xl tracking-tight">
               Users Management
             </h1>
             <p className="text-muted-foreground text-sm">
@@ -104,14 +102,12 @@ export default function Users() {
           />
         </div>
 
-        <div className="mt-12 rounded-xl border bg-card shadow-sm ">
+        <div className="mt-12 rounded-xl border bg-card shadow-sm">
           <div className="overflow-x-auto">
-            <TableDemo invoices={invoices}/>
+            <TableDemo invoices={invoices} />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-
