@@ -1,28 +1,28 @@
 /** biome-ignore-all lint/suspicious/noDocumentCookie: Cookie access used for sidebar state persistence */
 import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
-import { cva, type VariantProps } from "class-variance-authority";
-import { PanelLeftIcon } from "lucide-react";
-// biome-ignore lint/performance/noNamespaceImport: React namespace import required by shadcn components
-import * as React from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@proptech-admin/ui/components/button";
+import { Input } from "@proptech-admin/ui/components/input";
+import { Separator } from "@proptech-admin/ui/components/separator";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { Skeleton } from "@/components/ui/skeleton";
+} from "@proptech-admin/ui/components/sheet";
+import { Skeleton } from "@proptech-admin/ui/components/skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils";
+} from "@proptech-admin/ui/components/tooltip";
+import { useIsMobile } from "@proptech-admin/ui/hooks/use-mobile";
+import { cn } from "@proptech-admin/ui/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+import { PanelLeftIcon } from "lucide-react";
+// biome-ignore lint/performance/noNamespaceImport: React namespace import required by shadcn components
+import * as React from "react";
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;

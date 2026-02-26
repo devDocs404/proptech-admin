@@ -1,5 +1,7 @@
 "use client";
 
+import { Label } from "@proptech-admin/ui/components/label";
+import { cn } from "@proptech-admin/ui/lib/utils";
 import React from "react";
 import {
   Controller,
@@ -9,8 +11,6 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
 
 const Form = FormProvider;
 
