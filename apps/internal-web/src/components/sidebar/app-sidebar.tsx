@@ -1,15 +1,8 @@
 "use client";
 
-import {
-  Command,
-  FileText,
-  LayoutDashboard,
-  PieChart,
-  Users,
-} from "lucide-react";
+import { Briefcase, Command, LayoutDashboard, Users } from "lucide-react";
 import Link from "next/link";
 import type * as React from "react";
-import { NavMain } from "@/components/sidebar/nav-main";
 // import { NavSecondary } from "@/components/nav-secondary";
 // import { NavUser } from "@/components/nav-user";
 import {
@@ -49,42 +42,7 @@ const data = {
         },
       ],
     },
-    // {
-    //   title: "Settings",
-    //   url: "#",
-    //   icon: Settings2,
-    //   items: [
-    //     {
-    //       title: "General",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Team",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Billing",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Limits",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
   ],
-  // navSecondary: [
-  //   {
-  //     title: "Support",
-  //     url: "#",
-  //     icon: LifeBuoy,
-  //   },
-  //   {
-  //     title: "Feedback",
-  //     url: "#",
-  //     icon: Send,
-  //   },
-  // ],
   projects: [
     {
       name: "Dashboard",
@@ -92,15 +50,20 @@ const data = {
       icon: LayoutDashboard,
     },
     {
-      name: "Stats",
-      url: "/stats",
-      icon: PieChart,
+      name: "Clients",
+      url: "/clients",
+      icon: Briefcase,
     },
-    {
-      name: "Reports",
-      url: "/reports",
-      icon: FileText,
-    },
+    // {
+    //   name: "Stats",
+    //   url: "/stats",
+    //   icon: PieChart,
+    // },
+    // {
+    //   name: "Reports",
+    //   url: "/reports",
+    //   icon: FileText,
+    // },
   ],
 };
 
@@ -129,7 +92,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
+        {/* <NavMain items={data.navMain} /> */}
         <NavProjects projects={data.projects} />
         {/* <NavSecondary className="mt-auto" items={data.navSecondary} /> */}
       </SidebarContent>
