@@ -1,19 +1,18 @@
 "use client";
 
-import { useMutation, useQuery } from "@tanstack/react-query";
-import { Loader2, Trash2 } from "lucide-react";
-import { type ReactNode, useState } from "react";
-
-import { Button } from "@/components/ui/button";
+import { Button } from "@proptech-admin/ui/components/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
+} from "@proptech-admin/ui/components/card";
+import { Checkbox } from "@proptech-admin/ui/components/checkbox";
+import { Input } from "@proptech-admin/ui/components/input";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Loader2, Trash2 } from "lucide-react";
+import { type ReactNode, useState } from "react";
 import { trpc } from "@/utils/trpc";
 
 export default function TodosPage() {

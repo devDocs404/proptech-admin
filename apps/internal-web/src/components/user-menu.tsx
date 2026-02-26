@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-
+import { Button } from "@proptech-admin/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,11 +9,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@proptech-admin/ui/components/dropdown-menu";
+import { Skeleton } from "@proptech-admin/ui/components/skeleton";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
-
-import { Button } from "./ui/button";
-import { Skeleton } from "./ui/skeleton";
 
 export default function UserMenu() {
   const router = useRouter();

@@ -1,16 +1,16 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
-import { motion } from "motion/react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import {
   SidebarGroup,
   SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+} from "@proptech-admin/ui/components/sidebar";
+import type { LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function NavProjects({
   projects,

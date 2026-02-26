@@ -1,3 +1,5 @@
+import { Button } from "@proptech-admin/ui/components/button";
+import StatsCard from "@proptech-admin/ui/components/stats-card";
 import {
   Building2,
   Plus,
@@ -6,8 +8,6 @@ import {
   UserX,
 } from "lucide-react";
 import TableDemo from "@/components/custom-table";
-import { Button } from "@/components/ui/button";
-import StatsCard from "@/components/ui/stats-card";
 
 const stats = {
   companies: 12,

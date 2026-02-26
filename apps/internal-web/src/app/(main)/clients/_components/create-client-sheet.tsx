@@ -1,15 +1,15 @@
-import { useForm } from "@tanstack/react-form";
-import { Building2, Calendar, Mail, Phone, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "@proptech-admin/ui/components/button";
+import { Input } from "@proptech-admin/ui/components/input";
+import { Label } from "@proptech-admin/ui/components/label";
 import {
   Sheet,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
+} from "@proptech-admin/ui/components/sheet";
+import { useForm } from "@tanstack/react-form";
+import { Building2, Calendar, Mail, Phone, User } from "lucide-react";
 import { type Client, createClientSchema } from "@/types/client";
 
 interface CreateClientSheetProps {

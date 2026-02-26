@@ -1,8 +1,5 @@
 "use client";
 
-import { Briefcase, Command, LayoutDashboard, Users } from "lucide-react";
-import Link from "next/link";
-import type * as React from "react";
 // import { NavSecondary } from "@/components/nav-secondary";
 // import { NavUser } from "@/components/nav-user";
 import {
@@ -13,7 +10,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+} from "@proptech-admin/ui/components/sidebar";
+import { Briefcase, Command, LayoutDashboard, Users } from "lucide-react";
+import Link from "next/link";
+import type * as React from "react";
 import { NavProjects } from "./nav-project";
 
 const data = {

@@ -1,5 +1,21 @@
 "use client";
 
+import { Button } from "@proptech-admin/ui/components/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@proptech-admin/ui/components/dropdown-menu";
+import StatsCard from "@proptech-admin/ui/components/stats-card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@proptech-admin/ui/components/table";
 import {
   AtSign,
   Briefcase,
@@ -14,22 +30,6 @@ import {
   UserX,
 } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import StatsCard from "@/components/ui/stats-card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import type { Client } from "@/types/client";
 import { CreateClientSheet } from "./create-client-sheet";
 import { initialClients } from "./mock-data";

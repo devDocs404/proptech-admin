@@ -1,5 +1,3 @@
-import { Ban, Eye, Trash2 } from "lucide-react";
-import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,8 +7,10 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+} from "@proptech-admin/ui/components/alert-dialog";
+import { Button } from "@proptech-admin/ui/components/button";
+import { Ban, Eye, Trash2 } from "lucide-react";
+import { useState } from "react";
 import type { Client } from "@/types/client";
 
 interface ClientActionsProps {

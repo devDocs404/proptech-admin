@@ -1,5 +1,5 @@
+import { Button } from "@proptech-admin/ui/components/button";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function LandingPage() {
   return (

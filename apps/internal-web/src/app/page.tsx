@@ -1,6 +1,4 @@
 "use client";
-import { ModeToggle } from "@/components/mode-toggle";
-import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -8,13 +6,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Separator } from "@/components/ui/separator";
+} from "@proptech-admin/ui/components/breadcrumb";
+import { Separator } from "@proptech-admin/ui/components/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar";
+} from "@proptech-admin/ui/components/sidebar";
+import { ModeToggle } from "@/components/mode-toggle";
+import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import UserMenu from "@/components/user-menu";
 
 export default function LandingPage() {

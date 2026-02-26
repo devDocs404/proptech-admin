@@ -1,12 +1,11 @@
-import { MoreHorizontalIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@proptech-admin/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@proptech-admin/ui/components/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -15,7 +14,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@proptech-admin/ui/components/table";
+import { MoreHorizontalIcon } from "lucide-react";
 
 function TableDemo({ invoices }) {
   return (
