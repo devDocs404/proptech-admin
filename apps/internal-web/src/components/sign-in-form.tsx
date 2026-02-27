@@ -1,15 +1,15 @@
 "use client";
+
+import { Button } from "@proptech-admin/ui/components/button";
+import { Input } from "@proptech-admin/ui/components/input";
+import { Label } from "@proptech-admin/ui/components/label";
 import { useForm } from "@tanstack/react-form";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import z from "zod";
-
 import { authClient } from "@/lib/auth-client";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 
 export default function SignInForm() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export default function SignInForm() {
             const channel = new BroadcastChannel("auth_channel");
             channel.postMessage("login");
             channel.close();
-            router.push("/dashboard");
+            router.push("/");
             toast.success("Welcome back!");
           },
           onError: (error) => {
@@ -44,7 +44,7 @@ export default function SignInForm() {
     },
     validators: {
       onSubmit: z.object({
-        email: z.email("Invalid email address"),
+        email: z.string().email("Invalid email address"),
         password: z.string().min(1, "Password is required"),
         rememberMe: z.boolean(),
       }),

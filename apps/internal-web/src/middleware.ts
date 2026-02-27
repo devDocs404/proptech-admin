@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Define protected routes
-  const protectedRoutes = ["/dashboard", "/todos"];
-  const isProtectedRoute = protectedRoutes.some((route) =>
+  // Define PUBLIC routes (only these are accessible without auth)
+  const publicRoutes = ["/login", "/signup"];
+  const isPublicRoute = publicRoutes.some((route) =>
     pathname.startsWith(route)
   );
 
@@ -15,22 +15,24 @@ export function middleware(request: NextRequest) {
   // Note: For full security, we should verify the token, but in middleware edge runtime,
   // that requires edge-compatible verification or just relying on cookie presence for redirection
   // and letting the actual page/API handle strict verification.
-  const hasSession =
-    request.cookies.has("better-auth.session_token") ||
-    request.cookies.has("__Secure-better-auth.session_token") ||
-    request.cookies.has("session_token");
+  const sessionCookieName =
+    process.env.NODE_ENV === "production"
+      ? "__Secure-better-auth.session_token"
+      : "better-auth.session_token";
+  const hasSession = request.cookies.has(sessionCookieName);
 
-  // Redirect to login if accessing protected route without session
-  if (isProtectedRoute && !hasSession) {
+  // Redirect to login if accessing a protected route without a session
+  if (!(isPublicRoute || hasSession)) {
     const loginUrl = new URL("/login", request.url);
     // loginUrl.searchParams.set("callbackUrl", pathname); // Optional: add callback URL
     return NextResponse.redirect(loginUrl);
   }
 
-  // Optional: Redirect to dashboard if accessing login while authenticated
-  // Removed naive cookie check here to prevent infinite redirect loop
-  // if the session cookie is present but invalid. Validation should happen
-  // on the page or via proper session API fetch.
+  // Redirect to dashboard if accessing login/signup while already authenticated
+  if (isPublicRoute && hasSession) {
+    const dashboardUrl = new URL("/", request.url);
+    return NextResponse.redirect(dashboardUrl);
+  }
 
   return NextResponse.next();
 }

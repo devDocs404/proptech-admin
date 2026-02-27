@@ -1,16 +1,16 @@
 "use client";
+
+import { Button } from "@proptech-admin/ui/components/button";
+import { Checkbox } from "@proptech-admin/ui/components/checkbox";
+import { Input } from "@proptech-admin/ui/components/input";
+import { Label } from "@proptech-admin/ui/components/label";
 import { useForm } from "@tanstack/react-form";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import z from "zod";
-
 import { authClient } from "@/lib/auth-client";
-import { Button } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 
 export default function SignInForm() {
   const router = useRouter();
@@ -45,7 +45,7 @@ export default function SignInForm() {
     },
     validators: {
       onSubmit: z.object({
-        email: z.email("Invalid email address"),
+        email: z.string().email("Invalid email address"),
         password: z.string().min(1, "Password is required"),
         rememberMe: z.boolean(),
       }),
@@ -141,7 +141,7 @@ export default function SignInForm() {
                     <Checkbox
                       checked={field.state.value}
                       id={field.name}
-                      onCheckedChange={(checked) =>
+                      onCheckedChange={(checked: boolean | "indeterminate") =>
                         field.handleChange(!!checked)
                       }
                     />

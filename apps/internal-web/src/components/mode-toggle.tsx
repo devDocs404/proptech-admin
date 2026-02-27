@@ -1,15 +1,14 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button";
+import { Button } from "@proptech-admin/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@proptech-admin/ui/components/dropdown-menu";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
@@ -27,6 +26,18 @@ export function ModeToggle() {
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("midnight")}>
+          Midnight
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("softPop")}>
+          Soft Pop
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("nature")}>
+          Nature
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("bubbleGum")}>
+          Bubble Gum
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
           System

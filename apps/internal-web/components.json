@@ -13,10 +13,10 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
+    "utils": "@proptech-admin/ui/lib/utils",
+    "ui": "@proptech-admin/ui/components",
     "lib": "@/lib",
-    "hooks": "@/hooks"
+    "hooks": "@proptech-admin/ui/hooks"
   },
   "menuColor": "default",
   "menuAccent": "subtle",
