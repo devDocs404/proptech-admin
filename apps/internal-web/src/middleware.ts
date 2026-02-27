@@ -15,10 +15,11 @@ export function middleware(request: NextRequest) {
   // Note: For full security, we should verify the token, but in middleware edge runtime,
   // that requires edge-compatible verification or just relying on cookie presence for redirection
   // and letting the actual page/API handle strict verification.
-  const hasSession =
-    request.cookies.has("better-auth.session_token") ||
-    request.cookies.has("__Secure-better-auth.session_token") ||
-    request.cookies.has("session_token");
+  const sessionCookieName =
+    process.env.NODE_ENV === "production"
+      ? "__Secure-better-auth.session_token"
+      : "better-auth.session_token";
+  const hasSession = request.cookies.has(sessionCookieName);
 
   // Redirect to login if accessing protected route without session
   if (isProtectedRoute && !hasSession) {
