@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -14,17 +12,22 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@proptech-admin/ui/components/sidebar";
+import { cookies } from "next/headers";
 import { ModeToggle } from "@/components/mode-toggle";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import UserMenu from "@/components/user-menu";
 
-export default function MainLayout({
+export default async function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const sidebarState = cookieStore.get("sidebar_state")?.value;
+  const defaultOpen = sidebarState === "true" || sidebarState === undefined;
+
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={defaultOpen}>
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center justify-between gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
