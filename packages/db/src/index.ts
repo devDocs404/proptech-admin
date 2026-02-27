@@ -12,11 +12,13 @@ import {
   userRelations,
   verification,
 } from "./schema/auth";
+import { clientCompany } from "./schema/clients";
 import { todo } from "./schema/todo";
 
 const schema = {
   account,
   accountRelations,
+  clientCompany,
   session,
   sessionRelations,
   todo,
