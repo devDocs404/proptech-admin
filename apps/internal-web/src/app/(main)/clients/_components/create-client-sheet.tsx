@@ -1,6 +1,4 @@
 import { Button } from "@proptech-admin/ui/components/button";
-import { Input } from "@proptech-admin/ui/components/input";
-import { Label } from "@proptech-admin/ui/components/label";
 import {
   Sheet,
   SheetContent,
@@ -11,6 +9,7 @@ import {
 import { useForm } from "@tanstack/react-form";
 import { Building2, Calendar, Mail, Phone, User } from "lucide-react";
 import { type Client, createClientSchema } from "@/types/client";
+import CustomInput from "@/components/custom-input";
 
 interface CreateClientSheetProps {
   open: boolean;
@@ -73,209 +72,105 @@ export function CreateClientSheet({
               }}
             >
               <form.Field name="companyName">
-                {(field) => (
-                  <div className="space-y-2">
-                    <Label
-                      className="text-slate-700 dark:text-slate-300"
-                      htmlFor={field.name}
-                    >
-                      Company Name
-                    </Label>
-                    <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <Building2 className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                      </div>
-                      <Input
-                        className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                        id={field.name}
-                        name={field.name}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="Acme Corp"
-                        value={field.state.value}
-                      />
-                    </div>
-                    {field.state.meta.errors ? (
-                      <em className="font-medium text-red-500 text-sm">
-                        {field.state.meta.errors
-                          .map((error) => error?.message || error)
-                          .join(", ")}
-                      </em>
-                    ) : null}
-                  </div>
+                {(field) => (                
+                  <CustomInput
+                    label="Company Name"
+                    id={field.name}
+                    name={field.name}
+                    onBlur={field.handleBlur}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    placeholder="Acme Corp"
+                    value={field.state.value}
+                    type="text"
+                    error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                    icon={<Building2 className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                  />
                 )}
               </form.Field>
 
               <form.Field name="contactPerson">
                 {(field) => (
-                  <div className="space-y-2">
-                    <Label
-                      className="text-slate-700 dark:text-slate-300"
-                      htmlFor={field.name}
-                    >
-                      Contact Person Name
-                    </Label>
-                    <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <User className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                      </div>
-                      <Input
-                        className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                        id={field.name}
-                        name={field.name}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="John Doe"
-                        value={field.state.value}
-                      />
-                    </div>
-                    {field.state.meta.errors ? (
-                      <em className="font-medium text-red-500 text-sm">
-                        {field.state.meta.errors
-                          .map((error) => error?.message || error)
-                          .join(", ")}
-                      </em>
-                    ) : null}
-                  </div>
+                  <CustomInput
+                    label="Contact Person Name"
+                    id={field.name}
+                    name={field.name}
+                    onBlur={field.handleBlur}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    placeholder="John Doe"
+                    value={field.state.value}
+                    type="text"
+                    error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                    icon={<User className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                  />
                 )}
               </form.Field>
 
               <form.Field name="email">
                 {(field) => (
-                  <div className="space-y-2">
-                    <Label
-                      className="text-slate-700 dark:text-slate-300"
-                      htmlFor={field.name}
-                    >
-                      Work Email
-                    </Label>
-                    <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <Mail className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                      </div>
-                      <Input
-                        className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                        id={field.name}
-                        name={field.name}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="john@acme.com"
-                        type="email"
-                        value={field.state.value}
-                      />
-                    </div>
-                    {field.state.meta.errors ? (
-                      <em className="font-medium text-red-500 text-sm">
-                        {field.state.meta.errors
-                          .map((error) => error?.message || error)
-                          .join(", ")}
-                      </em>
-                    ) : null}
-                  </div>
+                  <CustomInput
+                    label="Work Email"
+                    id={field.name}
+                    name={field.name}
+                    onBlur={field.handleBlur}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    placeholder="john@acme.com"
+                    value={field.state.value}
+                    type="email"
+                    error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                    icon={<Mail className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                  />
                 )}
               </form.Field>
 
               <form.Field name="phoneNumber">
                 {(field) => (
-                  <div className="space-y-2">
-                    <Label
-                      className="text-slate-700 dark:text-slate-300"
-                      htmlFor={field.name}
-                    >
-                      Phone Number
-                    </Label>
-                    <div className="relative">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                        <Phone className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                      </div>
-                      <Input
-                        className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                        id={field.name}
-                        name={field.name}
-                        onBlur={field.handleBlur}
-                        onChange={(e) => field.handleChange(e.target.value)}
-                        placeholder="+1 555-0199"
-                        type="tel"
-                        value={field.state.value}
-                      />
-                    </div>
-                    {field.state.meta.errors ? (
-                      <em className="font-medium text-red-500 text-sm">
-                        {field.state.meta.errors
-                          .map((error) => error?.message || error)
-                          .join(", ")}
-                      </em>
-                    ) : null}
-                  </div>
+                  <CustomInput
+                    label="Phone Number"
+                    id={field.name}
+                    name={field.name}
+                    onBlur={field.handleBlur}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    placeholder="+1 555-0199"
+                    value={field.state.value}
+                    type="tel"
+                    error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                    icon={<Phone className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                  />
                 )}
               </form.Field>
 
               <div className="grid grid-cols-2 gap-4">
                 <form.Field name="agreementStartDate">
                   {(field) => (
-                    <div className="space-y-2">
-                      <Label
-                        className="text-slate-700 dark:text-slate-300"
-                        htmlFor={field.name}
-                      >
-                        Start Date
-                      </Label>
-                      <div className="relative">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <Calendar className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                        </div>
-                        <Input
-                          className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                          id={field.name}
-                          name={field.name}
-                          onBlur={field.handleBlur}
-                          onChange={(e) => field.handleChange(e.target.value)}
-                          type="date"
-                          value={field.state.value}
-                        />
-                      </div>
-                      {field.state.meta.errors ? (
-                        <em className="font-medium text-red-500 text-sm">
-                          {field.state.meta.errors
-                            .map((error) => error?.message || error)
-                            .join(", ")}
-                        </em>
-                      ) : null}
-                    </div>
+                    <CustomInput
+                      label="Start Date"
+                      id={field.name}
+                      name={field.name}
+                      onBlur={field.handleBlur}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      placeholder="Start Date"
+                      value={field.state.value}
+                      type="date"
+                      error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                      icon={<Calendar className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                    />
                   )}
                 </form.Field>
 
                 <form.Field name="agreementEndDate">
                   {(field) => (
-                    <div className="space-y-2">
-                      <Label
-                        className="text-slate-700 dark:text-slate-300"
-                        htmlFor={field.name}
-                      >
-                        End Date
-                      </Label>
-                      <div className="relative">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                          <Calendar className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />
-                        </div>
-                        <Input
-                          className="h-10 rounded-lg border-slate-200 bg-slate-50 pr-4 pl-10 text-slate-900 transition-colors focus-visible:bg-transparent focus-visible:ring-indigo-500/30 dark:border-slate-800/60 dark:bg-[#0c0c0e] dark:text-slate-100 dark:placeholder:text-slate-500"
-                          id={field.name}
-                          name={field.name}
-                          onBlur={field.handleBlur}
-                          onChange={(e) => field.handleChange(e.target.value)}
-                          type="date"
-                          value={field.state.value}
-                        />
-                      </div>
-                      {field.state.meta.errors ? (
-                        <em className="font-medium text-red-500 text-sm">
-                          {field.state.meta.errors
-                            .map((error) => error?.message || error)
-                            .join(", ")}
-                        </em>
-                      ) : null}
-                    </div>
+                    <CustomInput
+                      label="End Date"
+                      id={field.name}
+                      name={field.name}
+                      onBlur={field.handleBlur}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      placeholder="End Date"
+                      value={field.state.value}
+                      type="date"
+                      error={field.state.meta.errors ? field.state.meta.errors.map((error) => error?.message || error).join(", ") : undefined}
+                      icon={<Calendar className="h-4 w-4 text-slate-400 group-focus-within:text-indigo-500" />}
+                    />
                   )}
                 </form.Field>
               </div>
